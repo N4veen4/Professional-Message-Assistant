@@ -7,7 +7,7 @@ TextBuddy is a sleek, modern React application that allows you to transcribe you
 - 🎤 **Real-Time Speech Recognition**: Seamlessly speak your thoughts out loud. The app captures your voice continuously and displays the text as you speak.
 - 🪄 **AI-Powered Polishing**: Uses Google's powerful Gemini AI models to automatically fix grammar, elevate vocabulary, and rephrase your text to sound professional and courteous.
 - 🎨 **Modern Light Theme UI**: A clean, distraction-free interface built for focus, featuring high-quality SVG iconography and a beautiful custom layout.
-- 🔒 **Privacy First**: Your Gemini API key is required to use the app, but it is stored securely and locally in your browser's `localStorage`. No backend database or tracking is involved.
+- 🔒 **Secure by Design**: The app uses a custom Express backend to communicate with Google's Gemini AI. Your API key is stored securely in your server's `.env` file and is never exposed to the frontend browser.
 - 📝 **Inline Editing**: You can manually type your message or edit your voice transcript directly before sending it to the AI for polishing.
 - 📋 **One-Click Copy**: Easily copy your polished results to your clipboard to paste into any email client or chat application.
 
@@ -31,24 +31,26 @@ TextBuddy is a sleek, modern React application that allows you to transcribe you
    npm install
    ```
 
-3. **Start the development server:**
+3. **Configure your API Key:**
+   Create a `.env` file in the root directory by renaming `.env.example` or creating a new file:
+   ```env
+   GEMINI_API_KEY=your_actual_key_here
+   ```
+
+4. **Start the development server:**
    ```bash
    npm run dev
    ```
+   *(This uses `concurrently` to start both the Vite frontend and Express backend simultaneously)*
 
-4. **Open in browser:**
+5. **Open in browser:**
    Open `http://localhost:5173` (or the port Vite provides) in your browser.
-
-## ⚙️ Configuration
-
-1. Click the **Settings Gear (⚙️)** in the top right corner of the application.
-2. Enter your Google Gemini API key.
-3. Click **Save**. You're ready to start recording!
 
 ## 🛠️ Technologies Used
 
 - **React 19** - Frontend framework
 - **Vite** - Next-generation frontend tooling and bundler
+- **Express / Node.js** - Backend server to securely handle API requests
 - **Google Generative AI SDK** - For connecting to the Gemini LLM
 - **Vanilla CSS** - Custom variables and animations for a fast, responsive UI
 - **Web Speech API** - Native browser API for voice-to-text recognition
