@@ -1,55 +1,60 @@
-🎙️ AI – Professional Communication Enhancement
+# TextBuddy (Professional Message Assistant)
 
-A web-based AI application that converts spoken English with grammatical mistakes into clear, professional written text, helping users save time and improve communication.
+TextBuddy is a sleek, modern React application that allows you to transcribe your voice in real-time and uses Google's Gemini AI to instantly polish your rough transcripts into articulate, professional text—perfect for work emails, Slack updates, or formal requests.
 
-🚀 Features
+## ✨ Features
 
-Voice-to-text conversion
+- 🎤 **Real-Time Speech Recognition**: Seamlessly speak your thoughts out loud. The app captures your voice continuously and displays the text as you speak.
+- 🪄 **AI-Powered Polishing**: Uses Google's powerful Gemini AI models to automatically fix grammar, elevate vocabulary, and rephrase your text to sound professional and courteous.
+- 🎨 **Modern Light Theme UI**: A clean, distraction-free interface built for focus, featuring high-quality SVG iconography and a beautiful custom layout.
+- 🔒 **Privacy First**: Your Gemini API key is required to use the app, but it is stored securely and locally in your browser's `localStorage`. No backend database or tracking is involved.
+- 📝 **Inline Editing**: You can manually type your message or edit your voice transcript directly before sending it to the AI for polishing.
+- 📋 **One-Click Copy**: Easily copy your polished results to your clipboard to paste into any email client or chat application.
 
-Accepts improper spoken English
+## 🚀 Getting Started
 
-AI-based grammar and tone improvement
+### Prerequisites
+- Node.js (v16 or higher)
+- A modern web browser that supports the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) (Google Chrome, Microsoft Edge, or Safari are recommended).
+- A valid [Google Gemini API Key](https://aistudio.google.com/app/apikey).
 
-Editable text before refinement
+### Installation
 
-Simple and user-friendly interface
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/N4veen4/Professional-Message-Assistant.git
+   cd Professional-Message-Assistant
+   ```
 
-🛠️ Tech Stack
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-React.js, Vite
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-JavaScript, HTML5, CSS3
+4. **Open in browser:**
+   Open `http://localhost:5173` (or the port Vite provides) in your browser.
 
-Web Speech API
+## ⚙️ Configuration
 
-AI-based NLP text refinement
+1. Click the **Settings Gear (⚙️)** in the top right corner of the application.
+2. Enter your Google Gemini API key.
+3. Click **Save**. You're ready to start recording!
 
-🎯 Use Cases
+## 🛠️ Technologies Used
 
-Students
+- **React 19** - Frontend framework
+- **Vite** - Next-generation frontend tooling and bundler
+- **Google Generative AI SDK** - For connecting to the Gemini LLM
+- **Vanilla CSS** - Custom variables and animations for a fast, responsive UI
+- **Web Speech API** - Native browser API for voice-to-text recognition
 
-Employees
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/N4veen4/Professional-Message-Assistant/issues).
 
-Industry teams
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
-
-
+---
+*Developed with focus and simplicity to make professional communication effortless.*
