@@ -11,6 +11,7 @@ function App() {
   const [isRecording, setIsRecording] = useState(false)
   const [polishedResult, setPolishedResult] = useState(null)
   const [isPolishing, setIsPolishing] = useState(false)
+  const [apiKey, setApiKey] = useState(localStorage.getItem('gemini_api_key') || '')
 
   // FIX: Properly accumulate final transcripts without losing them when interim updates
   const handleTranscriptChange = (final, interim) => {
@@ -28,7 +29,7 @@ function App() {
     setIsPolishing(true);
 
     try {
-      const polished = await refineText(text);
+      const polished = await refineText(text, apiKey);
       setPolishedResult(polished);
     } catch (error) {
       setPolishedResult(`Error: ${error.message}`);
@@ -63,7 +64,7 @@ function App() {
 
       <main className="main-content">
         {!polishedResult && !isPolishing ? (
-          <WelcomeScreen />
+          <WelcomeScreen apiKey={apiKey} setApiKey={setApiKey} />
         ) : (
           <ResultScreen 
             polishedResult={polishedResult} 

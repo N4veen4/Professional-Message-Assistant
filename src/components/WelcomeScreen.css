@@ -98,3 +98,70 @@
     right: var(--space-md);
     color: var(--border-dark);
 }
+
+.api-key-section {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    width: 100%;
+    max-width: 500px;
+}
+
+.api-key-instruction {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.api-key-input-group {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.api-key-input {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    color: var(--text-primary);
+    outline: none;
+}
+
+.api-key-input:focus {
+    border-color: var(--primary-color);
+}
+
+.api-key-save-btn,
+.api-key-clear-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-lg);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.api-key-save-btn:hover {
+    background: var(--primary-hover);
+}
+
+.api-key-status {
+    color: var(--success-color, #4ade80);
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+}
+
+.api-key-clear-btn {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.api-key-clear-btn:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}

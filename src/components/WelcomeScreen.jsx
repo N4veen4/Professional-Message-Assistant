@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './WelcomeScreen.css';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ apiKey, setApiKey }) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleSaveKey = () => {
+        if (inputValue.trim()) {
+            localStorage.setItem('gemini_api_key', inputValue.trim());
+            setApiKey(inputValue.trim());
+            setInputValue('');
+        }
+    };
+
+    const handleClearKey = () => {
+        localStorage.removeItem('gemini_api_key');
+        setApiKey('');
+    };
+
     return (
         <div className="welcome-container">
             <div className="welcome-hero-icon">
@@ -22,6 +37,27 @@ const WelcomeScreen = () => {
                 I am your Professional Message Assistant. I can transcribe your speech<br />
                 and polish it into clear, professional English.
             </p>
+
+            {!apiKey ? (
+                <div className="api-key-section">
+                    <p className="api-key-instruction">Please enter your Gemini API Key to continue:</p>
+                    <div className="api-key-input-group">
+                        <input
+                            type="password"
+                            placeholder="Enter Gemini API Key..."
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            className="api-key-input"
+                        />
+                        <button onClick={handleSaveKey} className="api-key-save-btn">Save Key</button>
+                    </div>
+                </div>
+            ) : (
+                <div className="api-key-section">
+                    <p className="api-key-status">✅ API Key is configured</p>
+                    <button onClick={handleClearKey} className="api-key-clear-btn">Clear Key</button>
+                </div>
+            )}
             
             <div className="welcome-hints">
                 <div className="hint-card">
