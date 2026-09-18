@@ -1,0 +1,103 @@
+.text-display-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .text-display-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.text-panel {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    min-height: 300px;
+    border: 1px solid var(--bg-tertiary);
+}
+
+.text-panel h3 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.text-area {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    resize: none;
+    outline: none;
+    line-height: 1.6;
+}
+
+.text-area::placeholder {
+    color: var(--bg-tertiary);
+}
+
+/* Refined Panel Styles */
+.text-panel.refined {
+    border-color: var(--accent-primary);
+    background: linear-gradient(to bottom right, var(--bg-secondary), rgba(56, 189, 248, 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    color: var(--accent-primary);
+}
+
+.badge {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+}
+
+.refined-content {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.interim-text {
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 2px solid var(--accent-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
